@@ -6,6 +6,9 @@ let
   callPackage = pkgs.lib.callPackageWith (pkgs // self);
 
   self = {
+    leechcore = callPackage ./pkgs/leechcore/package.nix {};
+    memprocfs = callPackage ./pkgs/memprocfs/package.nix {};
+    pcileech = callPackage ./pkgs/pcileech/package.nix {};
     sugarcube = callPackage ./pkgs/sugarcube/package.nix {};
     tweego = callPackage ./pkgs/tweego/package.nix {};
   };

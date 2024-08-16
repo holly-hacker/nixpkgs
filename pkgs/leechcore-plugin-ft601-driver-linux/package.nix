@@ -22,7 +22,9 @@ stdenv.mkDerivation rec {
     libmicrovmi
    ];
 
-   makeFlags = [ "-C leechcore_ft601_driver_linux" ];
+  makeFlags = [ "-C leechcore_ft601_driver_linux" ];
+
+  patches = [ ./fix-buffer-overflow.patch ];
 
   installPhase = ''
     cp ${memprocfs}/lib/leechcore.so ./files/

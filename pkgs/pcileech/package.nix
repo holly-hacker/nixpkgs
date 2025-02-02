@@ -20,6 +20,8 @@ stdenv.mkDerivation rec {
     fuse
    ];
 
+  patches = [ ./more-benchmarks-sizes.patch ];
+
   installPhase = ''
     cp ${memprocfs}/lib/leechcore.so ./files/
     cp ${memprocfs}/lib/vmm.so ./files/

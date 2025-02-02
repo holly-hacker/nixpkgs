@@ -1,0 +1,14 @@
+diff --git a/pcileech/extra.c b/pcileech/extra.c
+index fbc7e19..567e884 100644
+--- a/pcileech/extra.c
++++ b/pcileech/extra.c
+@@ -535,6 +535,9 @@ VOID Action_Benchmark()
+     Extra_Benchmark_ReadSingle(ppMEMs, 128);        // 128 bytes
+     Extra_Benchmark_ReadSingle(ppMEMs, 512);        // 512 bytes
+     Extra_Benchmark_ReadSingle(ppMEMs, 0x1000);     // 4 KB
++    Extra_Benchmark_ReadSingle(ppMEMs, 0x2000);
++    Extra_Benchmark_ReadSingle(ppMEMs, 0x4000);
++    Extra_Benchmark_ReadSingle(ppMEMs, 0x8000);
+     Extra_Benchmark_ReadSingle(ppMEMs, 0x10000);    // 64 KB
+     Extra_Benchmark_ReadSingle(ppMEMs, 0x100000);   // 1 MB
+     cbs = Extra_Benchmark_ReadSingle(ppMEMs, 0x1000000);  // 16 MB

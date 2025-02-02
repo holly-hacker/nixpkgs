@@ -18,7 +18,7 @@ stdenv.mkDerivation rec {
 
   nativeBuildInputs = [ 
     pkg-config
-    libusb
+    libusb1
     libmicrovmi
    ];
 

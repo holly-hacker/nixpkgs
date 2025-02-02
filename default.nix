@@ -8,8 +8,6 @@ let
     libmicrovmi = callPackage ./pkgs/libmicrovmi/package.nix {};
     memprocfs = callPackage ./pkgs/memprocfs/package.nix {};
     pcileech = callPackage ./pkgs/pcileech/package.nix {};
-    pico-sdk-2 = callPackage ./pkgs/pico-sdk-2/package.nix {};
-    picotool-2 = callPackage ./pkgs/picotool-2/package.nix {};
     sugarcube = callPackage ./pkgs/sugarcube/package.nix {};
   };
 in

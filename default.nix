@@ -11,7 +11,6 @@ let
     pico-sdk-2 = callPackage ./pkgs/pico-sdk-2/package.nix {};
     picotool-2 = callPackage ./pkgs/picotool-2/package.nix {};
     sugarcube = callPackage ./pkgs/sugarcube/package.nix {};
-    tweego = callPackage ./pkgs/tweego/package.nix {};
   };
 in
 self

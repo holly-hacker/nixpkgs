@@ -26,6 +26,7 @@ You can use this package with [Tweego](https://github.com/tmedwards/tweego) in a
           nativeBuildInputs = [];
           buildInputs = [];
           packages = [
+            pkgs.tweego
             holly-pkgs.sugarcube
           ];
           shellHook = "export TWEEGO_PATH=${holly-pkgs.sugarcube}/lib/";

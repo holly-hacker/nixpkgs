@@ -6,18 +6,31 @@ Notable packages:
 - [sugarcube](./pkgs/sugarcube/README.md)
 
 ## Usage example
-`shell.nix`
+`flake.nix`
 ```nix
-{ pkgs ? import <nixpkgs> {} }:
-
-let
-  holly-pkgs = import (fetchTarball "https://github.com/holly-hacker/nixpkgs/archive/32408c2193dc217a03fcdafca842722027eba911.tar.gz") { };
-in pkgs.mkShell {
-  packages = [
-    holly-pkgs.tweego
-    holly-pkgs.sugarcube
-  ];
-
-  shellHook = "export TWEEGO_PATH=${holly-pkgs.sugarcube}/lib/";
+{
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    holly-nixpkgs.url = "github:holly-hacker/nixpkgs";
+    flake-utils.url = "github:numtide/flake-utils";
+  };
+  outputs = { self, nixpkgs, holly-nixpkgs, flake-utils, ... }:
+    flake-utils.lib.eachDefaultSystem (system:
+      let
+        pkgs = import nixpkgs { inherit system; };
+        holly-pkgs = import holly-nixpkgs { inherit system pkgs; };
+      in
+      {
+        devShells.default = pkgs.mkShell rec {
+          nativeBuildInputs = [];
+          buildInputs = [];
+          packages = [
+            pkgs.tweego
+            holly-pkgs.sugarcube
+          ];
+          shellHook = "export TWEEGO_PATH=${holly-pkgs.sugarcube}/lib/";
+        };
+      }
+    );
 }
 ```

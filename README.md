@@ -6,6 +6,11 @@ Notable packages:
 - [sugarcube](./pkgs/sugarcube/README.md)
 
 ## Usage example
+`nix run`
+```sh
+$ nix run github:holly-hacker/nixpkgs#pcileech
+```
+
 `flake.nix`
 ```nix
 {

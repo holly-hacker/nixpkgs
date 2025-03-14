@@ -5,18 +5,16 @@ with pkgs;
 
 rustPlatform.buildRustPackage rec {
   pname = "libmicrovmi";
-  version = "0.3.14";
+  version = "0.3.16";
 
   src = fetchFromGitHub {
     owner = "Wenzel";
     repo = "libmicrovmi";
-    rev = "v0.3.14";
-    sha256 = "sha256-8BxiJ/4/dmBPrwp71s8E1+IHok+lA4hXMmtCjECnSAM=";
+    rev = "6a026d737dcc87535d7376aa30fd8d24c7fd5c4d"; # v0.3.16
+    sha256 = "sha256-aMn1fIMwwDAwniH30UGTf3qAyfngynHkCbw3Xs8cEWw=";
   };
 
-  cargoHash = "sha256-uPzTZdzx2TAUfh5nDGa3UJJeuTjPTVQWdRojbha0ufU=";
-
-  # outputs = [ "out" "dev" ] ++ lib.optionals withDocs [ "doc" ];
+  cargoHash = "sha256-fvLPaTcbVtk9MUM5FfT4TJQMHFMMHewXdP1Hsb7/Dzw=";
 
   doCheck = false; # disable tests
 

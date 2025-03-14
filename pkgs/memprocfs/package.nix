@@ -6,12 +6,12 @@ with pkgs;
 
 stdenv.mkDerivation rec {
   pname = "memprocfs";
-  version = "5.11.4";
+  version = "5.14";
 
   src = fetchFromGitHub {
     owner = "ufrisk";
     repo = "memprocfs";
-    rev = "5a50667933c87f542e9bd34f7d438b8603e29bc0"; # v5.11.4
+    rev = "17dcf57c9f739f651d62733f040179b93ec34d6f"; # v5.14
     hash = "sha256-1Pwql4yzV+hLPy1/tc2vhj/GE/LS0Lda/1Eq9eJslHI=";
   };
   # sourceRoot = "${src.name}/memprocfs";

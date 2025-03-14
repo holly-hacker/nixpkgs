@@ -7,13 +7,13 @@ with pkgs;
 
 stdenv.mkDerivation rec {
   pname = "leechcore-plugin-ft601-driver-linux";
-  version = "2.16.4"; # current latest version is 2.16.8, but it contains no changes to this plugin
+  version = "2.16.8-20240816"; # no explicit versions seem to be defined
 
   src = fetchFromGitHub {
     owner = "ufrisk";
     repo = "LeechCore-plugins";
-    rev = "1267e6d74681e338147c03f878b15ba5f32c7fde";
-    hash = "sha256-9WgF8qox+IOc+Wr6zugqI1raQlFQ9BOumuO9TC/rRw8=";
+    rev = "56f2d6f689916e8e6cab1eea28f0bb033f2ab70e";
+    hash = "sha256-SIUL4e+3whJSB7llyOreNJsEaiuC4rgSHPHowzMu1WU=";
   };
 
   nativeBuildInputs = [ 
@@ -23,8 +23,6 @@ stdenv.mkDerivation rec {
    ];
 
   makeFlags = [ "-C leechcore_ft601_driver_linux" ];
-
-  patches = [ ./fix-buffer-overflow.patch ];
 
   installPhase = ''
     cp ${memprocfs}/lib/leechcore.so ./files/

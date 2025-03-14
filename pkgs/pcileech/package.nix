@@ -7,13 +7,13 @@ with pkgs;
 
 stdenv.mkDerivation rec {
   pname = "pcileech";
-  version = "4.18";
+  version = "4.19";
 
   src = fetchFromGitHub {
     owner = "ufrisk";
     repo = "pcileech";
-    rev = "v4.18";
-    hash = "sha256-CE3bxMsnKi+ckoih7NxKO/gykhX9QAjB18yVhkfi0cU=";
+    rev = "v4.19";
+    hash = "sha256-ksykFKCoKabgkW0olAgoPBu2BT8Oz7crG12qDdkYsG8=";
   };
 
   nativeBuildInputs = [ 

@@ -4,15 +4,14 @@ with pkgs;
 
 stdenv.mkDerivation rec {
   pname = "leechcore";
-  version = "2.18.7";
+  version = "2.21";
 
   src = fetchFromGitHub {
     owner = "ufrisk";
     repo = "leechcore";
-    rev = "3eff4c5b079e8aaff9d5392bc698de7cb4a05b5d"; # v2.18.7
-    hash = "sha256-60yQmx3ZcjaWgUzA1l+F3frPAyrJcr2ihf/zKXWz+t0=";
+    rev = "v2.21";
+    hash = "sha256-VjRhfkm+rDR5xzs7JCproI3dTQua/edFaJ4VOCdXXzA=";
   };
-  # sourceRoot = "${src.name}/leechcore";
 
   nativeBuildInputs = [
     pkg-config
